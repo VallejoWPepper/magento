@@ -106,15 +106,6 @@
                         <argument name="add_attribute" xsi:type="string">itemprop="description"</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.components" template="Magento_Catalog::product/view/components.phtml" after="product.info.type">
-                    <arguments>
-                        <argument name="at_call" xsi:type="string">getComponent</argument>
-                        <argument name="at_code" xsi:type="string">components</argument>
-                        <argument name="css_class" xsi:type="string">components</argument>
-                        <argument name="at_label" xsi:type="string">Component</argument>
-                        <argument name="add_attribute" xsi:type="string">itemprop="components"</argument>
-                    </arguments>
-                </block>
             </container>
             <container name="product.info.media" htmlTag="div" htmlClass="product media" after="product.info.main">
                 <block class="Magento\Framework\View\Element\Template" name="skip_gallery_after.target" before="skip_gallery_before.wrapper" template="Magento_Theme::html/skiptarget.phtml">
@@ -204,5 +195,12 @@
                     name="product_viewed_counter"
                     template="Magento_Catalog::product/view/counter.phtml"/>
         </referenceContainer>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View" name="test.tab" template="Magento_Catalog::custom_tab.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Components</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
     </body>
 </page>
